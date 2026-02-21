@@ -1,16 +1,26 @@
-# Introduction to GitHub
+# 纸感笔记（Paper Notes）
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+一个更完整的笔记 Web 小工具：
 
-Hey @yumbuf07!
+- 邮箱注册 / 登录（本地浏览器存储）。
+- 自动记录笔记日期。
+- 笔记索引（按时间倒序）与按日期搜索。
+- 自动保存（输入后约 1 秒自动持久化）。
+- 将缩进文本一键转换为思维导图。
+- 主题设置（白色、黑色、粉色、浅绿色、浅蓝色、纸张米白）。
+- 导出当前笔记为 PNG 图片。
+- 图片 OCR 识别文字并追加保存（依赖网络加载 `tesseract.js`）。
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+## 快速开始
 
-Remember, it's self-paced so feel free to take a break! ☕️
+```bash
+python3 -m http.server 4173
+```
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/yumbuf07/musical-octo-lamp/issues/1)
+然后访问 `http://localhost:4173`。
 
----
+## 笔记转思维导图规则
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
+- 每行是一个节点。
+- 通过空格或 Tab 的缩进表示层级关系。
+- 标题会作为思维导图根节点。

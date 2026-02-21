@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>纸感笔记 · 思维导图</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <div>
+          <h1>纸感笔记</h1>
+          <p>支持账号、设置、索引、搜索、自动保存、导图与 OCR</p>
+        </div>
+        <div class="header-actions">
+          <button id="openSettingsBtn" class="secondary">设置</button>
+          <button id="logoutBtn" class="secondary hidden">退出登录</button>
+        </div>
+      </header>
+
+      <section id="authPanel" class="panel auth-panel">
+        <div class="panel-header"><h2>邮箱注册 / 登录</h2></div>
+        <label for="emailInput" class="field-label">邮箱</label>
+        <input id="emailInput" type="email" placeholder="you@example.com" />
+        <label for="passwordInput" class="field-label">密码</label>
+        <input id="passwordInput" type="password" placeholder="至少 6 位" />
+        <div class="actions">
+          <button id="registerBtn" type="button">注册</button>
+          <button id="loginBtn" type="button" class="secondary">登录</button>
+        </div>
+        <p id="authHint" class="hint"></p>
+      </section>
+
+      <section id="workspace" class="workspace hidden">
+        <section class="panel note-index-panel">
+          <div class="panel-header">
+            <h2>笔记索引</h2>
+            <span id="userBadge" class="date-chip"></span>
+          </div>
+          <label for="dateSearch" class="field-label">按日期搜索</label>
+          <input id="dateSearch" type="date" />
+          <div id="noteList" class="note-list"></div>
+        </section>
+
+        <section class="panel note-panel">
+          <div class="panel-header">
+            <h2>笔记编辑区</h2>
+            <span id="noteDate" class="date-chip" aria-live="polite"></span>
+          </div>
+          <label for="noteTitle" class="field-label">标题</label>
+          <input id="noteTitle" class="title-input" type="text" placeholder="例如：怎样读好一本书" />
+
+          <label for="noteContent" class="field-label">内容（每行一个要点，使用缩进表示层级）</label>
+          <textarea id="noteContent" rows="14" placeholder="目标\n  计划\n执行\n复盘"></textarea>
+
+          <div class="actions wrap">
+            <button id="saveBtn" type="button">保存笔记</button>
+            <button id="convertBtn" type="button">转为思维导图</button>
+            <button id="exportBtn" type="button" class="secondary">导出图片</button>
+            <button id="clearBtn" type="button" class="secondary">新建/清空</button>
+          </div>
+
+          <label for="ocrImage" class="field-label">图片识别文字（OCR）</label>
+          <input id="ocrImage" type="file" accept="image/*" />
+          <p id="ocrHint" class="hint">上传图片后自动识别文字并追加到笔记内容。</p>
+        </section>
+
+        <section class="panel map-panel">
+          <div class="panel-header">
+            <h2>思维导图预览</h2>
+          </div>
+          <div id="mindMap" class="mind-map" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="settings-form">
+        <h3>界面设置</h3>
+        <label for="themeSelect">主题颜色</label>
+        <select id="themeSelect">
+          <option value="paper">纸张米白</option>
+          <option value="white">白色</option>
+          <option value="dark">黑色</option>
+          <option value="pink">粉色</option>
+          <option value="green">浅绿色</option>
+          <option value="blue">浅蓝色</option>
+        </select>
+        <div class="actions">
+          <button id="saveSettingsBtn" value="default">保存</button>
+          <button class="secondary" value="cancel">关闭</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
