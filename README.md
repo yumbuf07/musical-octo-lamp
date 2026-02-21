@@ -1,16 +1,22 @@
-# Introduction to GitHub
+# 纸感笔记（Paper Notes）
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+一个界面简洁的笔记 Web 小工具：
 
-Hey @yumbuf07!
+- 支持输入笔记标题和正文。
+- 自动显示当前记录日期。
+- 可将“按缩进组织”的笔记内容一键转换成思维导图（树状结构预览）。
+- 页面采用纸张质感背景，提供接近手写笔记的视觉体验。
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+## 快速开始
 
-Remember, it's self-paced so feel free to take a break! ☕️
+```bash
+python3 -m http.server 4173
+```
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/yumbuf07/musical-octo-lamp/issues/1)
+然后访问 `http://localhost:4173`。
 
----
+## 笔记转思维导图规则
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
+- 每行是一个节点。
+- 通过空格或 Tab 的缩进表示层级关系。
+- 标题会作为思维导图根节点。

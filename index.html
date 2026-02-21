@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>纸感笔记 · 思维导图</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>纸感笔记</h1>
+        <p>写下想法，一键生成思维导图</p>
+      </header>
+
+      <section class="panel note-panel">
+        <div class="panel-header">
+          <h2>笔记编辑区</h2>
+          <span id="noteDate" class="date-chip" aria-live="polite"></span>
+        </div>
+        <label for="noteTitle" class="field-label">标题</label>
+        <input id="noteTitle" class="title-input" type="text" placeholder="例如：产品迭代计划" />
+
+        <label for="noteContent" class="field-label">内容（每行一个要点，使用缩进表示层级）</label>
+        <textarea
+          id="noteContent"
+          rows="14"
+          placeholder="目标\n  用户调研\n  原型设计\n执行\n  开发\n  测试\n复盘"
+        ></textarea>
+
+        <div class="actions">
+          <button id="convertBtn" type="button">转为思维导图</button>
+          <button id="clearBtn" type="button" class="secondary">清空</button>
+        </div>
+      </section>
+
+      <section class="panel map-panel">
+        <div class="panel-header">
+          <h2>思维导图预览</h2>
+        </div>
+        <div id="mindMap" class="mind-map" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
